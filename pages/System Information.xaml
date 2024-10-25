@@ -1,0 +1,28 @@
+﻿<Page x:Class="Flarebook.pages.System_Information"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Flarebook.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="System_Information" Width="763" Height="544.76">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="硬件信息" FontSize="24" FontWeight="Bold" Margin="10"/>
+        <ListView x:Name="HardwareListView" Grid.Row="1" Margin="10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="组件" DisplayMemberBinding="{Binding Component}" Width="200"/>
+                    <GridViewColumn Header="详细信息" DisplayMemberBinding="{Binding Details}" Width="500"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="导出到TXT文件" Margin="614,16,0,15" HorizontalAlignment="Left" Click="ExportToTxt_Click" RenderTransformOrigin="0.823,0.055"/>
+    </Grid>
+</Page>
